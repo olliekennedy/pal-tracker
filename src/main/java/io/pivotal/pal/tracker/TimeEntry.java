@@ -1,14 +1,15 @@
 package io.pivotal.pal.tracker;
 
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.Objects;
 
 public class TimeEntry {
-    private final long id;
-    private final long projectId;
-    private final long userId;
-    private final LocalDate date;
-    private final int hours;
+    private long id;
+    private long projectId;
+    private long userId;
+    private LocalDate date;
+    private int hours;
 
     public TimeEntry(long id, long projectId, long userId, LocalDate date, int hours) {
         this.id = id;
@@ -16,6 +17,9 @@ public class TimeEntry {
         this.userId = userId;
         this.date = date;
         this.hours = hours;
+    }
+
+    public TimeEntry() {
     }
 
     public long getId() {
@@ -60,5 +64,25 @@ public class TimeEntry {
                 ", date=" + date +
                 ", hours=" + hours +
                 '}';
+    }
+
+    public void setProjectId(long project_id) {
+        this.projectId = project_id;
+    }
+
+    public void setUserId(long user_id) {
+        this.userId = user_id;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public void setHours(int hours) {
+        this.hours = hours;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }
